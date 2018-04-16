@@ -9,8 +9,8 @@
 abstract class DbSP {
     // database connectivity
     const DBHOST = 'localhost';     // host
-    const DBUSER = 'nobody';        // mysql user
-    const USERPWD = 'test';         // mysql password
+    const DBUSER = 'root';        // mysql user
+    const USERPWD = '';         // mysql password
     const DB = 'yaddaSecVariant';   // current database
     const DSN = "mysql:host=".self::DBHOST.";dbname=".self::DB;
 
