@@ -1,0 +1,53 @@
+/**
+ * yaddatestdb.sql
+ * @author nml
+ * @copyright (c) 2018, nml
+ * @license http://www.fsf.org/licensing/ GPLv3
+ */
+
+drop database if exists yaddatestdb;
+create database yaddatestdb;
+use yaddatestdb;
+
+drop table if exists users;
+create table user (
+  uid varchar(16) not null,
+  pwd blob not null,
+  activated boolean not null default false,
+  email varchar(64) not null,
+  profile enum('admin', 'regular') not null default 'regular',
+  realname varchar(64) not null,
+  primary key(uid),
+  unique(email)
+);
+
+create table avatar (
+    uid varchar(16) not null,
+    mimetype varchar(32) not null,
+    image blob not null,
+    primary key(uid),
+    foreign key(uid)
+        references user(uid)
+        on delete cascade
+        on update cascade
+);
+-- Jane_01
+insert into user (uid, pwd, email, realname)
+    values('anybody', '$2y$10$zYIe4y3dvhI/fDC0R4nxmuMR3lFDFmBrCykAO9MnS3Y3MoJ7omV9y',
+            'anybody@yaddayaddayadda.dk', 'John Doe'
+);
+-- John_42
+insert into user (uid, pwd, activated, email, realname)
+    values('somebody', '$2y$10$oWs95YbVofnGVNf3VBnwJe8mSvHb8KX1cxYNURkciFEA4TnezF1Xa',
+            true, 'somebody@yaddayaddayadda.dk', 'Jane Doe'
+);
+-- test
+insert into user (uid, pwd, activated, email, realname)
+    values('nobody', '$2y$10$C7a4VpLvm3D34AUTPmSUXu1gvhwhsb65aYu.A9vOCMuhVAZ81M3Nq',
+            true, 'nobody@yaddayaddayadda.dk', 'Who Am I'
+);
+-- big secret (cic)
+insert into user (uid, pwd, activated, profile, email, realname)
+    values('admin', '$2y$10$C7B9SEelUeg1uWcVyU/SNuptKXIFeWa7T2MqaZY8bDZxFImfgol0i',
+            true, 'admin', 'admin@yaddayaddayadda.dk', 'Ad Min'
+);
