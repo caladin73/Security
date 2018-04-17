@@ -11,7 +11,7 @@ abstract class DbSP {
     const DBHOST = 'localhost';     // host
     const DBUSER = 'root';        // mysql user
     const USERPWD = '';         // mysql password
-    const DB = 'yaddaSecVariant';   // current database
+    const DB = 'yaddasecvariant';   // current database
     const DSN = "mysql:host=".self::DBHOST.";dbname=".self::DB;
 
     // secure sessions

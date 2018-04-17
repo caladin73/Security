@@ -5,9 +5,9 @@
  * @license http://www.fsf.org/licensing/ GPLv3
  */
 
-drop database if exists yaddatestdb;
-create database yaddatestdb;
-use yaddatestdb;
+drop database if exists yaddasecvariant;
+create database yaddasecvariant;
+use yaddasecvariant;
 
 drop table if exists users;
 create table user (
