@@ -4,7 +4,7 @@
  * Chapter 7
  */
 if (count($argv) != 7) {
-    $s = "php bruteforceattack.php -- http:// web2.kevi1379.iba-abakomp.dk/login userids passwords results\n";
+    $s = "php bruteforceattack.php -- localhost urlpath userids passwords results\n";
     $s .= "the latter three being filenames\n";
     die($s);
 }
