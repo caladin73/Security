@@ -3,11 +3,27 @@
  * Based on Chris Shiflett, Essential PHP Security, 2005, O'Reilly
  * Chapter 7
  */
+
+
+/*
+Min login0Auth.php er her:
+C:\xampp\htdocs\Security\Sec.1.1
+
+bruteforceattack.php er her:
+C:\xampp\htdocs\Security\Sec.2.0
+
+Jeg bruger den her komando:
+php bruteforceattack.php -- localhost Security/Sec.1.1/login0Auth.php darkuids.txt darkpwds.txt darkresults.txt
+
+Men jeg får noSuccess på alle forsøg, userid = nobody og pass = test
+*/
+
 if (count($argv) != 7) {
     $s = "php bruteforceattack.php -- localhost urlpath userids passwords results\n";
     $s .= "the latter three being filenames\n";
     die($s);
 }
+
 $host = $argv[2];
 $url = $argv[3];
 $ids = file_get_contents($argv[4]);
