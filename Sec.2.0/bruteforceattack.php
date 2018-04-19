@@ -12,7 +12,7 @@ C:\xampp\htdocs\Security\Sec.1.1
 bruteforceattack.php er her:
 C:\xampp\htdocs\Security\Sec.2.0
 
-Jeg bruger den her komando:
+Jeg bruger den her komando i terminal:
 php bruteforceattack.php -- localhost Security/Sec.1.1/login0Auth.php darkuids.txt darkpwds.txt darkresults.txt
 
 Men jeg får noSuccess på alle forsøg, userid = nobody og pass = test
