@@ -3,16 +3,13 @@
  * Based on Chris Shiflett, Essential PHP Security, 2005, O'Reilly
  * Chapter 7
  */
-
 if (count($argv) != 7) {
     $s = "php bruteforceattack.php -- localhost urlpath userids passwords results\n";
     $s .= "the latter three being filenames\n";
     die($s);
 }
-
-
-$host = $argv[1];
-$url = $argv[2];
+$host = $argv[2];
+$url = $argv[3];
 $ids = file_get_contents($argv[4]);
 $idsa = explode("\n", $ids);
 $pwds = file_get_contents($argv[5]);
