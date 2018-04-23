@@ -6,7 +6,7 @@ $dbh = DbH::getDbH();
 // if there is content in POST authenticate
 // sqlinj vulnerable
 if (count($_POST) > 0) {
-    $sql = "select uid, realname, pwd";
+    $sql = "select *";
     $sql .= " from user";
     $sql .= " where uid = '". $_POST['user'] ."'";
     $sql .= " and activated;";
@@ -16,11 +16,14 @@ if (count($_POST) > 0) {
         $obj  = $s->fetch(PDO::FETCH_OBJ);
         if ($obj && password_verify($_POST['password'], $obj->pwd)) {
             $_SESSION['demoLoginId'] = $obj->uid;
-
-            
-
             header("Location: ./login0.php?success");
         } else {
+            $sql = "update user";
+            $sql .= " set login_time = '". date('Y-m-d H:i:s') ."'";
+            $sql .= " where uid = '". $_POST['user'] ."'";
+            $s = $dbh->prepare($sql);
+            $s->execute();
+
             unset($_SESSION['demoLoginId']);
             header("Location: ./login0.php?err=noSuccess");
         }
