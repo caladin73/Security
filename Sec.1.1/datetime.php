@@ -13,3 +13,7 @@ echo "<br>";
 
 $date = date('Y-m-d H:i:s');
 echo $date;
+
+echo "<br>";
+$date = new DateTime();
+echo $date->getTimestamp(). "<br>";

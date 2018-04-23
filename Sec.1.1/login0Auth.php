@@ -14,6 +14,9 @@ if (count($_POST) > 0) {
         $s = $dbh->prepare($sql);
         $s->execute();
         $obj  = $s->fetch(PDO::FETCH_OBJ);
+
+        if (date(date('Y-m-d H:i:s') + 10 ))
+
         if ($obj && password_verify($_POST['password'], $obj->pwd)) {
             $_SESSION['demoLoginId'] = $obj->uid;
             header("Location: ./login0.php?success");
