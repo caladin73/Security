@@ -27,9 +27,9 @@ if (count($argv) != 7) {
 $host = $argv[2];
 $url = $argv[3];
 $ids = file_get_contents($argv[4]);
-$idsa = explode("\n", $ids);
+$idsa = explode("\r\n", $ids);
 $pwds = file_get_contents($argv[5]);
-$pwdsa = explode("\n", $pwds);
+$pwdsa = explode("\r\n", $pwds);
 $results = $argv[6];
 
 $http_header = '';
@@ -58,7 +58,7 @@ foreach($idsa as $uid) {
             }
             fclose($handle);
             /* Check response */
-            //var_dump($response);
+            var_dump($response);
             preg_match('/Location: \S+/', $response, $m, PREG_OFFSET_CAPTURE);
             if (count($m))
                 $s .= sprintf("\n%s %s", $content, $m[0][0]);

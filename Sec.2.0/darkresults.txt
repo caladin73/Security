@@ -1,13 +1,13 @@
 
-user=nobody&password=qwerty Location: ./login0.php?err=noSuccess
-user=nobody&password=qwerty Content-Length: 0
-user=nobody&password=123456 Location: ./login0.php?err=noSuccess
-user=nobody&password=123456 Content-Length: 0
-user=nobody&password=abc123 Location: ./login0.php?err=noSuccess
-user=nobody&password=abc123 Content-Length: 0
-user=nobody&password=test Location: ./login0.php?err=noSuccess
-user=nobody&password=test Content-Length: 0
-user=nobody&password=password Location: ./login0.php?err=noSuccess
-user=nobody&password=password Content-Length: 0
+user=nobody&password=qwerty Location: ./login0.php?err=noSuccess
+user=nobody&password=qwerty Content-Length: 0
+user=nobody&password=123456 Location: ./login0.php?err=noSuccess
+user=nobody&password=123456 Content-Length: 0
+user=nobody&password=abc123 Location: ./login0.php?err=noSuccess
+user=nobody&password=abc123 Content-Length: 0
+user=nobody&password=test Location: ./login0.php?success
+user=nobody&password=test Content-Length: 0
+user=nobody&password=password Location: ./login0.php?err=noSuccess
+user=nobody&password=password Content-Length: 0
 user=nobody&password=yuiop Location: ./login0.php?err=noSuccess
 user=nobody&password=yuiop Content-Length: 0
