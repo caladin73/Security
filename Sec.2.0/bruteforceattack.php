@@ -15,7 +15,16 @@ C:\xampp\htdocs\Security\Sec.2.0
 Jeg bruger den her komando i terminal:
 php bruteforceattack.php -- localhost Security/Sec.1.1/login0Auth.php darkuids.txt darkpwds.txt darkresults.txt
 
-Jeg kan fint logge ind med "nobody" og "test" i browseren.
+Jeg har problemer med at få den til at virke på vores abakom web
+Jeg vil gerne prøve et brute force forsøg på:
+
+web2.pete334y.iba-abakomp.dk/Yadda/model/Authentication.inc.php
+
+jeg får 400 Bad Request:
+php bruteforceattack.php -- http:// web2.pete334y.iba-abakomp.dk/Yadda/model/Authentication.inc.php darkuids.txt darkpwds.txt darkresults.txt
+
+Jeg er lidt i tvivl om http:// skal med når den starter med web2, jeg har prøvet forskellige muligheder uden held.
+
 */
 
 if (count($argv) != 7) {
