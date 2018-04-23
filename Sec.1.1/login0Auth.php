@@ -16,6 +16,9 @@ if (count($_POST) > 0) {
         $obj  = $s->fetch(PDO::FETCH_OBJ);
         if ($obj && password_verify($_POST['password'], $obj->pwd)) {
             $_SESSION['demoLoginId'] = $obj->uid;
+
+            
+
             header("Location: ./login0.php?success");
         } else {
             unset($_SESSION['demoLoginId']);
@@ -27,3 +30,4 @@ if (count($_POST) > 0) {
 } else {
     header("Location: ./login0.php?err=noData");
 }
+
