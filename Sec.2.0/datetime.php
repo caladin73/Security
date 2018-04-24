@@ -20,7 +20,7 @@ echo $date->getTimestamp(). "<br>";
 
 echo "<br>";
 $time_now = date("Y-d-m H:i:s");
-$time_in_10 = date("Y/d/m h:i:s a", time() + 10);
+$time_in_10 = date("Y/d/m h:i:s", time() + 10);
 
 
 echo $time_now . "<br>";
@@ -35,6 +35,8 @@ else {
 }
 
 echo "<br>";
+
+
 
 $selectedTime = date('Y-m-d H:i:s');
 $endTime = strtotime("+10 seconds", strtotime($selectedTime));
