@@ -12,8 +12,11 @@ C:\xampp\htdocs\Security\Sec.1.1
 bruteforceattack.php er her:
 C:\xampp\htdocs\Security\Sec.2.0
 
-Jeg bruger den her komando i terminal:
+Jeg bruger den her komando i terminal, som er beskyttet mod brute force:
 php bruteforceattack.php -- localhost Security/Sec.1.1/login0Auth.php darkuids.txt darkpwds.txt darkresults.txt
+
+old uden beskyttelse mod bruteforce:
+php bruteforceattack.php -- localhost Security/Sec.1.1/login0Auth_old.php darkuids.txt darkpwds.txt darkresults.txt
 
 Jeg har problemer med at få den til at virke på vores abakom web
 Jeg vil gerne prøve et brute force forsøg på:
