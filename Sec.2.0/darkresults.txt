@@ -1,8 +1,0 @@
-
-user=nobody&password=qwerty Content-Length: 447
-user=nobody&password=123456 Content-Length: 447
-user=nobody&password=abc123 Content-Length: 447
-user=nobody&password=test Content-Length: 447
-user=nobody&password=password Content-Length: 447
-user=nobody&password=yuiop Content-Length: 447
-user=nobody&password=1 Content-Length: 447
