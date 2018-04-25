@@ -24,7 +24,7 @@ Jeg vil gerne prøve et brute force forsøg på:
 web2.pete334y.iba-abakomp.dk/Yadda/model/Authentication.inc.php
 
 jeg får 400 Bad Request:
-php bruteforceattack.php -- http:// web2.pete334y.iba-abakomp.dk/Yadda/model/Authentication.inc.php darkuids.txt darkpwds.txt darkresults.txt
+php bruteforceattack.php -- web2.pete334y.iba-abakomp.dk /Yadda/model/Authentication.inc.php darkuids.txt darkpwds.txt darkresults.txt
 
 Jeg er lidt i tvivl om http:// skal med når den starter med web2, jeg har prøvet forskellige muligheder uden held.
 
@@ -70,7 +70,7 @@ foreach($idsa as $uid) {
             }
             fclose($handle);
             /* Check response */
-            //var_dump($response);
+            var_dump($response);
             preg_match('/Location: \S+/', $response, $m, PREG_OFFSET_CAPTURE);
             if (count($m))
                 $s .= sprintf("\n%s %s", $content, $m[0][0]);
