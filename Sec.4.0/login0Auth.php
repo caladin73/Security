@@ -12,9 +12,9 @@ if (count($_POST) > 0) {
     $sql .= " and pwd = '" . password_hash($_POST['password'], PASSWORD_DEFAULT) . "'";
     $sql .= " and activated;";
 
-    printf($sql);
+    //printf($sql);
     //var_dump($sql);
-    die();
+    //die();
     try {
         $s = $dbh->prepare($sql);
         $s->execute();
