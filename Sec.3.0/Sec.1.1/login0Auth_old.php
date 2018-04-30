@@ -9,13 +9,12 @@ if (count($_POST) > 0) {
     $sql = "select uid, realname, pwd";
     $sql .= " from user";
     $sql .= " where uid = '". $_POST['user'] ."'";
-    $sql .= " and pwd = '" . password_hash($_POST['password'], PASSWORD_DEFAULT) . "'";
     $sql .= " and activated;";
     try {
         $s = $dbh->prepare($sql);
         $s->execute();
         $obj  = $s->fetch(PDO::FETCH_OBJ);
-        if ($obj) {
+        if ($obj && password_verify($_POST['password'], $obj->pwd)) {
             $_SESSION['demoLoginId'] = $obj->uid;
             header("Location: ./login0.php?success");
         } else {

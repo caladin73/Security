@@ -28,7 +28,7 @@ $title = 'NMLs Login Demo - Front Page';
                 <fieldset>
                     <legend>login</legend>
                     <label for="uid">Id:</label>
-                    <input id="uid" name="user" value="xyz' or 1=1; --"/><br/>
+                    <input id="uid" name="user"/><br/>
                     <label for="pwd">Password:</label>
                     <input type="password"
                            id="pwd" name="password"/><br/>
