@@ -17,10 +17,6 @@ if (!
 require_once('DbH.inc.php');
 $dbh = DbH::getDbH();
 
-
-
-//INSERT INTO abstract (enteredby, authors, reftitle, abstract) VALUES ($uid, $authors, $reftitle, $abstract);
-
 if (count($_POST) > 0) {
 
     $uid = $_SESSION['demoLoginId'];
