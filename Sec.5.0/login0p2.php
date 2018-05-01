@@ -1,3 +1,22 @@
+<?php
+
+require_once('DbH.inc.php');
+$dbh = DbH::getDbH();
+
+$sql = "SELECT * FROM abstract";
+
+try {
+    $s = $dbh->prepare($sql);
+    $s->execute();
+
+    $result = $sql->setFetchMode(PDO::FETCH_ASSOC);
+    foreach(new TableRows(new RecursiveArrayIterator($sql->fetchAll())) as $k=>$v) {
+        echo $v;
+    }
+
+
+?>
+
 <!doctype html>
 <html>
 <head>
