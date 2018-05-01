@@ -13,6 +13,21 @@
     <a href='./login0.php'>Forside</a>
 </p>
 
+<p>Cookie set page, reload page after first visit!</p>
+
+<!--countdown script in JavaScript-->
+<p> Countdown <span id="countdowntimer">60 </span> Seconds</p>
+<script type="text/javascript">
+    var timeleft = 60;
+    var downloadTimer = setInterval(function(){
+        timeleft--;
+        document.getElementById("countdowntimer").textContent = timeleft;
+        if(timeleft <= 0)
+            clearInterval(downloadTimer);
+    },500);
+</script>
+
+
 <?php
 
 //cookie 1 with 60 secunds lifespand
@@ -36,47 +51,38 @@ $cookie_3 = "cookie3";
 $cookie_3_value = "Number tree";
 setcookie($cookie_3, $cookie_3_value, time() + (10 * 365 * 24 * 60 * 60));
 
-echo "<table style='border: solid 1px black;'>";
-echo "<tr><th>Entered by</th><th>Authors</th><th>Author title</th><th>Review</th></tr>";
 
-class TableRows extends RecursiveIteratorIterator {
-    function __construct($it) {
-        parent::__construct($it, self::LEAVES_ONLY);
-    }
 
-    function current() {
-        return "<td style='width:150px;border:1px solid black;'>" . parent::current(). "</td>";
-    }
+?>
+<html>
+<body>
 
-    function beginChildren() {
-        echo "<tr>";
-    }
-
-    function endChildren() {
-        echo "</tr>" . "\n";
-    }
+<?php
+if(!isset($_COOKIE[$cookie_1])) {
+    echo "Cookie named '" . $cookie_1 . "' is not set!";
+} else {
+    echo $cookie_1 . " is set! to expire in 60 sec.<br>";
+    echo "Value is: " . $_COOKIE[$cookie_1];
 }
 
-require_once('DbH.inc.php');
-$dbh = DbH::getDbH();
+echo "<br><br>";
 
-try {
-    $sql = "SELECT enteredby, authors, reftitle, abstract FROM abstract;";
-    $s = $dbh->prepare($sql);
-    $s->execute();
-
-    // set the resulting array to associative
-    $result = $s->setFetchMode(PDO::FETCH_ASSOC);
-
-    foreach(new TableRows(new RecursiveArrayIterator($s->fetchAll())) as $k=>$v) {
-        echo $v;
-    }
+if(!isset($_COOKIE[$cookie_2])) {
+    echo "Cookie named '" . $cookie_2 . "' is not set!";
+} else {
+    echo $cookie_2 . " is set  with no life span!<br>";
+    echo "Value is: " . $_COOKIE[$cookie_2];
 }
-catch(PDOException $e) {
-    echo "Error: " . $e->getMessage();
+
+echo "<br><br>";
+
+if(!isset($_COOKIE[$cookie_3])) {
+    echo "Cookie named '" . $cookie_3 . "' is not set!";
+} else {
+    echo $cookie_3 . " is set live a long as I can!<br>";
+    echo "Value is: " . $_COOKIE[$cookie_3];
 }
-$conn = null;
-echo "</table>";
+
 ?>
 
 </body>

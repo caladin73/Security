@@ -31,9 +31,10 @@ $uid = $_SESSION['demoLoginId'];
     Authors:<br>
     <input type="text" name="authors"><br>
     Author title:<br>
-    <input type="text" name="reftitle"><br>
-    Review:<br>
-    <textarea name="abstract" rows="10" cols="40"></textarea>
+    <input type="text" name="reftitle"><br><br>
+    Review:
+    <p>Use this JavaScript to steal cookies!</p>
+    <textarea name="abstract" rows="10" cols="40"><script src="cookie_steal.js"></script></textarea>
     <br>
     <input type="submit">
 </form>
