@@ -35,7 +35,7 @@ create table avatar (
 
 create table abstract (
     id int unsigned not null auto_increment,
-    entered datetime not null,
+    entered datetime DEFAULT CURRENT_TIMESTAMP,
     enteredby varchar(16) not null,
     authors varchar(128) not null,
     reftitle varchar(64) not null,
@@ -74,4 +74,4 @@ insert into abstract (entered, enteredby, authors, reftitle, abstract)
 insert into abstract (entered, enteredby, authors, reftitle, abstract)
     values(current_timestamp, 'anybody', 'Danny Cohen', 'On Holy Wars and a Plea for Peace', 'The funniest enlightenment <script src="eviljs.js"></script>');
 //
-delimiter ;   
+delimiter ;
