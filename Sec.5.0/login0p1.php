@@ -7,7 +7,7 @@ if (!
     exit();
 }
 
-//INSERT FORM
+$uid = $_SESSION['demoLoginId'];
 
 
 
@@ -19,17 +19,23 @@ if (!
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 </head>
 <body>
-<h1>You are logged in, insert data, or..</h1>
+<h1><?php echo $uid; ?>: You are logged in, insert data, or go back!</h1>
 <p>
     Go back to
     <a href='./login0.php'>Forside</a>
 </p>
 
-<form>
-    First name:<br>
-    <input type="text" name="firstname"><br>
-    Last name:<br>
-    <input type="text" name="lastname">
+<form action="insert.php" method="post">
+    Insert by: <b><?php echo $uid; ?></b>
+    <br><br>
+    Authors:<br>
+    <input type="text" name="authors"><br>
+    Author title:<br>
+    <input type="text" name="reftitle"><br>
+    Review:<br>
+    <textarea name="abstract" rows="10" cols="40"></textarea>
+    <br>
+    <input type="submit">
 </form>
 
 </body>
