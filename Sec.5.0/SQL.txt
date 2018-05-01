@@ -44,8 +44,8 @@ create table abstract (
     foreign key(enteredby) references user(uid)
 );
 
-grant select on user to nobody@localhost;
-grant select, insert on abstract to nobody@localhost;
+-- grant select on user to nobody@localhost;
+-- grant select, insert on abstract to nobody@localhost;
 
 -- Jane_01
 insert into user (uid, pwd, email, realname)
