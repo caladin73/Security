@@ -28,31 +28,13 @@ if (count($_POST) > 0) {
     $reftitle =  $_POST['reftitle'];
     $abstract =  $_POST['abstract'];
 
-    echo "uid: " . $uid . "<br>";
-    echo "authors: " . $authors . "<br>";
-    echo "ureftitle: " . $reftitle . "<br>";
-    echo "abstract: " . $abstract . "<br>";
-
-
-
     $sql = "INSERT INTO abstract (enteredby, authors, reftitle, abstract)";
-    $sql .= "  VALUES ("'" . $uid . "'," .  $authors, $reftitle, $abstract);";
-
-    var_dump($sql);
-    die();
-
+    $sql .= "  VALUES ('" . $uid . "'," . "'" . $authors . "'," . "'" . $reftitle . "'," . "'" . $abstract . "');";
 
     try {
         $s = $dbh->prepare($sql);
         $s->execute();
-        $obj  = $s->fetch(PDO::FETCH_OBJ);
-        if ($obj && password_verify($_POST['password'], $obj->pwd)) {
-            $_SESSION['demoLoginId'] = $obj->uid;
-            header("Location: ./login0.php?success");
-        } else {
-            unset($_SESSION['demoLoginId']);
-            header("Location: ./login0.php?err=noSuccess");
-        }
+        header("Location: ./login0p2.php");
     } catch (PDOException $e) {
         die(sprintf("Unexpected error<br/>\n", $e->getMessage()));
     }
