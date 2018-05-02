@@ -30,7 +30,7 @@ if (count($_POST) > 0) {
     try {
         $s = $dbh->prepare($sql);
         $s->execute();
-        header("Location: ./login0p2_old.php");
+        header("Location: ./login0p2.php");
     } catch (PDOException $e) {
         die(sprintf("Unexpected error<br/>\n", $e->getMessage()));
     }
