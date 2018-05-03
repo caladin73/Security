@@ -4,13 +4,12 @@
  * Chapter 7
  */
 
-/*
+
 if (count($argv) != 5) {
-    $s = "php bruteforce_hash_vertify.php -- localhost urlpath userids passwords results\n";
-    $s .= "the latter three being filenames\n";
+    $s = "php bruteforce_hash_vertify.php -- passwords password_hashed results\n";
     die($s);
 }
-*/
+
 
 //5 argv
 //php bruteforce_hash_vertify.php -- darkpwds.txt password_hashed.txt darkresults.txt
@@ -20,17 +19,10 @@ foreach($argv as $value)
     echo "$value\n";
 }
 
-
-
 die();
 
-
-
-$host = $argv[2];
-$url = $argv[3];
-$ids = file_get_contents($argv[4]);
 $idsa = explode("\r\n", $ids);
-$pwds = file_get_contents($argv[5]);
+$pwds = file_get_contents($argv[3]);
 $pwdsa = explode("\r\n", $pwds);
 $results = $argv[6];
 
