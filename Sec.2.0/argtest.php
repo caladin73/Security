@@ -7,6 +7,7 @@ foreach($argv as $value)
     echo "$value\n";
 }
 
+die();
 echo "\n\n";
 echo $argv[0] . "\n";
 echo $argv[1] . "\n";
