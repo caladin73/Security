@@ -10,9 +10,15 @@ if (count($argv) != 5) {
     die($s);
 }
 
-
-//5 argv
-//php bruteforce_hash_vertify.php -- darkpwds.txt password_hashed.txt darkresults.txt
+/**
+ *php bruteforce_hash_vertify.php -- darkpwds.txt password_hashed.txt darkresults.txt
+ * 5 argv
+ * 0 = bruteforce_hash_vertify.php
+ * 1 = --
+ * 2 = darkpwds.txt
+ * 3 = password_hashed.txt
+ * 4 = darkresults.txt
+*/
 
 foreach($argv as $value)
 {
@@ -21,46 +27,23 @@ foreach($argv as $value)
 
 die();
 
-$pas = file_get_contents($argv[3]);
-$pass = explode("\r\n", $ids);
-$pwds = file_get_contents($argv[3]);
-$pwdsa = explode("\r\n", $pwds);
-$results = $argv[6];
-
-
-
+$passwords = file_get_contents($argv[2]);
+$pas = explode("\r\n", $passwords);
+$hashed = file_get_contents($argv[3]);
+$pass_hashed = explode("\r\n", $hashed);
+$results = $argv[4];
 
 $s = '';
-foreach($idsa as $uid) {
-    foreach($pwdsa as $pwd) {
-        $content  = 'user=';
-        $content .= $uid;
-        $content .= '&password=';
-        $content .= $pwd;
-        $request = $http_header . $content;
-        $request = sprintf($request, strlen($content));
-        $response = '';
+foreach($pass as $item) {
+    foreach($pass_hashed as $value) {
 
-        if ($handle = fsockopen('localhost', 80)) {
-            fputs($handle, $request);
-            while (!feof($handle)) {
-                $response .= fgets($handle, 1024);
-            }
-            fclose($handle);
-            /* Check response */
-            var_dump($response);
-            preg_match('/Location: \S+/', $response, $m, PREG_OFFSET_CAPTURE);
-            if (count($m))
-                $s .= sprintf("\n%s %s", $content, $m[0][0]);
-            preg_match('/Content-Length: \d+/', $response, $m, PREG_OFFSET_CAPTURE);
-            if (count($m))
-                $s .= sprintf("\n%s %s", $content, $m[0][0]);
-        } else {
-            /* Error in sockopen */
-            die("WTF");
-        }
+
+
+        $response = '';
         file_put_contents($results, $s);
+
+
+
     }
 }
 echo "\n";
-?>
