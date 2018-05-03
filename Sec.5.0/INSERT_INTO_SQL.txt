@@ -1,0 +1,5 @@
+delimiter //
+
+
+
+INSERT INTO abstract (enteredby, authors, reftitle, abstract) VALUES ($uid, $authors, $reftitle, $abstract);
