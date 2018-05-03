@@ -15,27 +15,6 @@
 
 <?php
 
-//cookie 1 with 60 secunds lifespand
-$cookie_1 = "cookie1";
-$cookie_1_value = "Number one";
-setcookie($cookie_1, $cookie_1_value, time() + (60), "/");
-
-//cookie 2 with no life span specification
-$cookie_2 = "cookie2";
-$cookie_2_value = "Number two";
-setcookie($cookie_2, $cookie_2_value);
-
-//All cookies expire as per the cookie specification, so this is not a PHP limitation.
-//http://www.faqs.org/rfcs/rfc2965.html
-//I set a cookie that last for 10 years
-//time() + (10 * 365 * 24 * 60 * 60)
-//Be careful: if you set a date past year 2038 in PHP,
-// the number will wrap around and you'll get a cookie
-// that expires instantly (it will reset seconds counting back to 0 from 1 jan 1970)
-$cookie_3 = "cookie3";
-$cookie_3_value = "Number tree";
-setcookie($cookie_3, $cookie_3_value, time() + (10 * 365 * 24 * 60 * 60));
-
 echo "<table style='border: solid 1px black;'>";
 echo "<tr><th>Entered by</th><th>Authors</th><th>Author title</th><th>Review</th></tr>";
 
