@@ -21,7 +21,8 @@ foreach($argv as $value)
 
 die();
 
-$idsa = explode("\r\n", $ids);
+$pas = file_get_contents($argv[3]);
+$pass = explode("\r\n", $ids);
 $pwds = file_get_contents($argv[3]);
 $pwdsa = explode("\r\n", $pwds);
 $results = $argv[6];
