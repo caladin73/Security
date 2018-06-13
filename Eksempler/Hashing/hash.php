@@ -22,34 +22,27 @@ if($input !== '') {
     $sha1 = hash("sha1", $input);
     $sha512 = hash("sha512", $input);
     $whirlpool = hash("whirlpool", $input);
-    $crypt = crypt($input);
     $bcrypt0 = password_hash($input, PASSWORD_DEFAULT);
     $bcrypt1 = password_hash($input, PASSWORD_DEFAULT);
     $bcrypt2 = password_hash($input, PASSWORD_DEFAULT);
     $blowfish = password_hash($input, PASSWORD_BCRYPT );
-    $argon2i = password_hash($input, PASSWORD_ARGON2I);
     printf("<h3><code>%s</code></h3>\n", $input);
     printf("<table><tr><td>md5</td><td>%s</td><td>%s</td></tr>
             <tr><td>sha1</td><td>%s</td><td>%s</td></tr>
             <td>sha512</td><td>%s</td><td>%s</td></tr>
             <tr><td>whirlpool</td><td>%s</td><td>%s</td></tr>
-            <tr><td>crypt</td><td>%s</td><td>%s</td></tr>
             <tr><td>password_hash bcrypt0</td><td>%s</td><td>%s</td></tr>
             <tr><td>password_hash bcrypt1</td><td>%s</td><td>%s</td></tr>
             <tr><td>password_hash bcrypt2</td><td>%s</td><td>%s</td></tr>
-            <tr><td>password_hash blowfish</td><td>%s</td><td>%s</td></tr>
-            <tr><td>password_hash argon2i</td><td>%s</td><td>%s</td></tr></table>\n",
+            <tr><td>password_hash blowfish</td><td>%s</td><td>%s</td></tr>\n",
         strlen($md5), $md5,
         strlen($sha1), $sha1,
         strlen($sha512), $sha512,
         strlen($whirlpool), $whirlpool,
-        strlen($crypt), $crypt,
         strlen($bcrypt0), $bcrypt0,
         strlen($bcrypt1), $bcrypt1,
         strlen($bcrypt2), $bcrypt2,
-        strlen($blowfish), $blowfish,
-        strlen($argon2i), $argon2i);
-
+        strlen($blowfish), $blowfish;
     printf("<table>
             <tr><td>password_verify bcrypt0</td><td>%s</td><td>%s</td></tr>
             <tr><td>password_verify bcrypt1</td><td>%s</td><td>%s</td></tr>
