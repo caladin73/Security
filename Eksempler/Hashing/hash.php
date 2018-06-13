@@ -31,7 +31,7 @@ if($input !== '') {
     ];
     $bcrypt3 = password_hash($input, PASSWORD_DEFAULT, $options);
     $blowfish = password_hash($input, PASSWORD_BCRYPT );
-    //$argon2i = password_hash($input, PASSWORD_ARGON2I);
+    $argon2i = password_hash($input, PASSWORD_ARGON2I);
     printf("<h3><code>%s</code></h3>\n", $input);
     printf("<table><tr><td>Algorithm</td><td>Bit</td><td>Hashed Value</td></tr>
             <tr><td>md5</td><td>%s</td><td>%s</td></tr>
@@ -52,8 +52,8 @@ if($input !== '') {
         strlen($bcrypt1), $bcrypt1,
         strlen($bcrypt2), $bcrypt2,
         strlen($bcrypt3), $bcrypt3,
-        strlen($blowfish), $blowfish);
-        //strlen($argon2i), $argon2i);
+        strlen($blowfish), $blowfish,
+        strlen($argon2i), $argon2i);
 
     printf("<table>
             <tr><td>password_verify bcrypt0</td><td>%s</td><td>%s</td></tr>
