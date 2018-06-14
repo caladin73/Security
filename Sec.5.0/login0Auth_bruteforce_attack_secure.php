@@ -3,8 +3,6 @@ session_start();
 require_once('DbH.inc.php');
 $dbh = DbH::getDbH();
 
-// if there is content in POST authenticate
-// sqlinj vulnerable
 
 $time_now = date('Y-m-d H:i:s');
 
