@@ -71,6 +71,7 @@ foreach($idsa as $uid) {
             fclose($handle);
             /* Check response */
             var_dump($response);
+            //die();
             preg_match('/Location: \S+/', $response, $m, PREG_OFFSET_CAPTURE);
             if (count($m))
                 $s .= sprintf("\n%s %s", $content, $m[0][0]);
