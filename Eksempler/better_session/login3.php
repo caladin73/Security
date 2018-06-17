@@ -2,7 +2,7 @@
 require_once 'DbHSec.inc.php';
 DbHSec::better_session_start();
 $copy = "&copy; NML, 2018";
-$title = 'NMLs Login Demo - Front Page';
+$title = 'Secure';
 
 ?><!doctype html>
 <html>
@@ -22,7 +22,7 @@ $title = 'NMLs Login Demo - Front Page';
         (isset($_SESSION['demoLoginId']) &&
             $_SESSION['demoLoginId'] != '') ) {
             ?>
-            <h2>Test Login</h2>
+            <h2>Cookies requried</h2>
             <form action="login3Auth.php" method="post">
                 <fieldset>
                     <legend>login</legend>
@@ -53,4 +53,3 @@ $title = 'NMLs Login Demo - Front Page';
 </main>
 <footer><?php print($copy);?></footer>
 </body>
-</html>

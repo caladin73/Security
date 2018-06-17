@@ -1,11 +1,11 @@
 <?php
-  require_once 'DbSH.inc.php';
-  DbSH::better_session_start();
+  require_once 'DbHSec.inc.php';
+  DbHSec::better_session_start();
     //session_start();
     if (!
         (isset($_SESSION['demoLoginId']) &&
                     $_SESSION['demoLoginId'] != '') ) {
-        header("Location: ./login0.php?err=notAllowed");
+        header("Location: ./login3.php?err=notAllowed");
         exit();
     }
 ?><!doctype html>
@@ -19,7 +19,7 @@
         <h1>Page 1 - You're In</h1>
         <p>
             Go back to
-            <a href='./login0.php'>Forside</a>
+            <a href='./login3.php'>Forside</a>
         </p>
     </body>
 </html>

@@ -3,8 +3,6 @@ require_once 'DbHSec.inc.php';
 DbHSec::better_session_start();
 $dbh = DbHSec::getDbH();
 
-// if there is content in POST authenticate
-// sqlinj invulnerable
 if (count($_POST) > 0) {
     $sql = "select uid, realname, pwd";
     $sql .= " from user";

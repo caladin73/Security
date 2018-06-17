@@ -9,7 +9,7 @@
         <h1>Page 2 - You're In - Everbody's Allowed</h1>
         <p>
             Go back to
-            <a href='./login0.php'>Forside</a>
+            <a href='./login3.php'>Forside</a>
         </p>
     </body>
 </html>
