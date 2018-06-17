@@ -8,3 +8,5 @@ cookie2=Number two; cookie3=Number tree; PHPSESSID=jtdaou2oni7nvdhf5drgkavdb2
 
 cookie2=Number two; cookie3=Number tree; PHPSESSID=jtdaou2oni7nvdhf5drgkavdb2; cookie1=Number one
 
+cookie3=Number tree; PHPSESSID=su3aed6n9ukg030cmb27luep0j
+
